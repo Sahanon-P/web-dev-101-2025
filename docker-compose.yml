@@ -1,16 +1,6 @@
-# web-dev-101-2025
-
-## Server Setup Guide
-### Prerequiste
-
-- Docker
-- NodeJs
-
-1. In the docker compose file if your device is running on `amd64` architecture please change docker tag from `arm-64` to `amd-64`
-```yml
 services:
    server:
-    image: pazcalb/run2heaven-server:v1.0.0-arm64 # amd64
+    image: pazcalb/run2heaven-server:v1.0.0-arm64
     ports:
       - 3100:3100
     environment:
@@ -36,16 +26,3 @@ services:
 networks:
   run2heaven-network:
       
-```
-2. Run docker compose
-```bash
-docker compose up -d
-```
-
-3. Make sure that it start properly both database and server by look at docker desktop or type this command
-```bash
-docker ps
-```
-
-4. Open this URL to see API Specification `localhost:3100/api`
-
